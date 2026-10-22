@@ -26,11 +26,11 @@ export default async function OpengraphImage() {
   const place = "Алматы · Қалқаман-2 · Кенесбаев көшесі, 1";
 
   const [display, body] = await Promise.all([
-    loadFont("Unbounded", 600, title + subtitle),
+    loadFont("Montserrat", 600, title + subtitle),
     loadFont("Nunito", 800, facts.join("") + place),
   ]);
   const fonts = [
-    ...(display ? [{ name: "Unbounded", data: display, weight: 600 as const }] : []),
+    ...(display ? [{ name: "Montserrat", data: display, weight: 600 as const }] : []),
     ...(body ? [{ name: "Nunito", data: body, weight: 800 as const }] : []),
   ];
 
@@ -41,7 +41,7 @@ export default async function OpengraphImage() {
         <div style={{ position: "absolute", right: 120, bottom: -90, width: 240, height: 240, borderRadius: 999, background: "#FDF0C8", display: "flex" }} />
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 80px", flex: 1 }}>
           <div style={{ display: "flex", fontSize: 30, color: "#28786E", fontWeight: 800 }}>{place}</div>
-          <div style={{ display: "flex", flexDirection: "column", marginTop: 22, fontFamily: "Unbounded" }}>
+          <div style={{ display: "flex", flexDirection: "column", marginTop: 22, fontFamily: "Montserrat" }}>
             <span style={{ fontSize: 76, color: "#28786E", lineHeight: 1.05 }}>{title}</span>
             <span style={{ fontSize: 64, color: "#1F3A37", lineHeight: 1.1 }}>{subtitle}</span>
           </div>

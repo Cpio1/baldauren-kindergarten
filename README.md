@@ -1,6 +1,7 @@
 # «Балдаурен» балалар клубы — лендинг
 
 Next.js 15 (App Router) · TypeScript · Tailwind CSS v4 · Motion · Lucide.
+Шрифты: Montserrat (заголовки) и Nunito (текст) — оба содержат все казахские буквы Ә Ғ Қ Ң Ө Ұ Ү Һ І.
 
 ```bash
 npm install

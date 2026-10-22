@@ -1,12 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Nunito, Unbounded } from "next/font/google";
+import { Montserrat, Nunito } from "next/font/google";
 import { MotionProvider } from "@/components/shared/MotionProvider";
 import { club, seo } from "@/data/kindergarten";
 import { SITE_URL } from "@/lib/site-url";
 import "./globals.css";
 
-// cyrillic-ext carries the Kazakh letters Ә Ғ Қ Ң Ө Ұ Ү Һ І.
-const heading = Unbounded({
+// cyrillic-ext carries the Kazakh letters Ә Ғ Қ Ң Ө Ұ Ү Һ І — both faces really ship them.
+// (Unbounded was dropped: its cyrillic-ext file has no Kazakh letters, so ә ғ қ ң ө ұ ү һ fell
+// back to a system font and looked like capitals inside headings.)
+const heading = Montserrat({
   subsets: ["latin", "cyrillic", "cyrillic-ext"],
   weight: ["500", "600"],
   variable: "--font-heading",
