@@ -3,7 +3,7 @@ import { WhatsAppIcon } from "@/components/shared/BrandIcons";
 import { Dot, Sparkle, Star } from "@/components/shared/Decor";
 import { MediaView } from "@/components/shared/MediaView";
 import { SceneArt } from "@/components/shared/SceneArt";
-import { club, heroFacts, links, ui } from "@/data/kindergarten";
+import { club, heroFacts, links, photos, ui } from "@/data/kindergarten";
 import type { Media } from "@/lib/media";
 
 const SIZES = "(min-width: 576px) 544px, calc(100vw - 2rem)";
@@ -42,7 +42,7 @@ export function MobileHero({ media }: { media: Media | null }) {
         <div className="relative mx-auto mt-7 w-[min(100%,26rem)]">
           <div aria-hidden="true" className="absolute inset-x-5 -top-2.5 bottom-10 rounded-t-full bg-yellow/60" />
           <div className="relative aspect-[1/1] max-h-[56svh] w-full overflow-hidden rounded-t-full rounded-b-[2rem] bg-turquoise-soft shadow-card">
-            {media ? <MediaView media={media} alt="«Балдаурен» балалар клубы" sizes={SIZES} hero /> : <SceneArt variant="hero" className="absolute inset-0" />}
+            {media ? <MediaView media={media} alt={photos.hero.alt} objectPosition={photos.hero.focus} sizes={SIZES} hero /> : <SceneArt variant="hero" className="absolute inset-0" />}
           </div>
           <ul className="relative -mt-8 mx-3 grid grid-cols-3 rounded-[1.25rem] bg-white py-2.5 shadow-card">
             {heroFacts.map((f, i) => (

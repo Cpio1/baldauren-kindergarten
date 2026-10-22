@@ -3,7 +3,7 @@ import { Squiggle } from "@/components/shared/Decor";
 import { MediaView } from "@/components/shared/MediaView";
 import { Reveal } from "@/components/shared/Reveal";
 import { SceneArt } from "@/components/shared/SceneArt";
-import { about } from "@/data/kindergarten";
+import { about, photos } from "@/data/kindergarten";
 import type { Media } from "@/lib/media";
 
 export function MobileAbout({ media }: { media: Media | null }) {
@@ -20,7 +20,7 @@ export function MobileAbout({ media }: { media: Media | null }) {
         <Reveal y={12} className="relative mt-5">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem_4rem_1.75rem_1.75rem] bg-yellow-soft shadow-soft">
             {media ? (
-              <MediaView media={media} alt="«Балдаурен» балалар клубындағы күн" sizes="(min-width: 576px) 544px, calc(100vw - 2rem)" />
+              <MediaView media={media} alt={photos.about.alt} objectPosition={photos.about.focus} sizes="(min-width: 576px) 544px, calc(100vw - 2rem)" />
             ) : (
               <SceneArt variant="about" className="absolute inset-0" />
             )}

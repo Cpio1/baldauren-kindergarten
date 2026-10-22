@@ -26,3 +26,26 @@ export function useGallery(items: Media[], initial: number) {
     step,
   };
 }
+
+/** Width ÷ height of a gallery item (videos without a poster get a portrait default). */
+export function mediaRatio(item: Media) {
+  if (item.kind === "image") return item.width / item.height;
+  return item.poster ? item.poster.width / item.poster.height : 4 / 5;
+}
+
+export type GalleryRow = { cells: { item: Media; index: number; ratio: number }[]; spacer: number };
+
+/**
+ * Justified rows: items in a row get `flex-grow` equal to their aspect ratio, so the whole row
+ * shares one height and every photo keeps its proportions — no cropping, reading order kept.
+ * A short last row is padded (`spacer`, split on both sides) so it doesn't blow up in height.
+ */
+export function toRows(items: Media[], perRow: number, minRowRatio: number): GalleryRow[] {
+  const rows: GalleryRow[] = [];
+  for (let start = 0; start < items.length; start += perRow) {
+    const cells = items.slice(start, start + perRow).map((item, k) => ({ item, index: start + k, ratio: mediaRatio(item) }));
+    const sum = cells.reduce((acc, c) => acc + c.ratio, 0);
+    rows.push({ cells, spacer: Math.max(0, minRowRatio - sum) });
+  }
+  return rows;
+}

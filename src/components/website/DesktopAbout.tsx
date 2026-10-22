@@ -3,7 +3,7 @@ import { Leaf, Squiggle, Star } from "@/components/shared/Decor";
 import { MediaView } from "@/components/shared/MediaView";
 import { Reveal } from "@/components/shared/Reveal";
 import { SceneArt } from "@/components/shared/SceneArt";
-import { about } from "@/data/kindergarten";
+import { about, photos } from "@/data/kindergarten";
 import type { Media } from "@/lib/media";
 
 export function DesktopAbout({ media }: { media: Media | null }) {
@@ -14,7 +14,7 @@ export function DesktopAbout({ media }: { media: Media | null }) {
           <div aria-hidden="true" className="absolute -right-4 -bottom-4 h-full w-full rounded-[2.5rem_7rem_2.5rem_2.5rem] bg-coral-soft" />
           <div className="relative aspect-[5/4] max-h-[calc(100svh-10rem)] overflow-hidden rounded-[2.5rem_7rem_2.5rem_2.5rem] bg-yellow-soft shadow-card">
             {media ? (
-              <MediaView media={media} alt="«Балдаурен» балалар клубындағы күн" sizes="(min-width: 1280px) 460px, 38vw" />
+              <MediaView media={media} alt={photos.about.alt} objectPosition={photos.about.focus} sizes="(min-width: 1280px) 460px, 38vw" />
             ) : (
               <SceneArt variant="about" className="absolute inset-0" />
             )}

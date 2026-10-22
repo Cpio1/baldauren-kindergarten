@@ -7,12 +7,12 @@ import { GalleryTile } from "@/components/shared/GalleryTile";
 import { Lightbox } from "@/components/shared/Lightbox";
 import { Reveal } from "@/components/shared/Reveal";
 import { club, galleryCopy as g, links, ui } from "@/data/kindergarten";
-import { useGallery } from "@/hooks/useGallery";
+import { toRows, useGallery } from "@/hooks/useGallery";
 import type { Media } from "@/lib/media";
 
 const INITIAL = 4;
 
-/** Two-column masonry at each photo's own proportions: nothing cropped, nothing oversized. */
+/** Two photos per row, each at its own proportions (justified rows): nothing cropped, nothing oversized. */
 export function MobileGallery({ items }: { items: Media[] }) {
   const gal = useGallery(items, INITIAL);
 
@@ -43,22 +43,34 @@ export function MobileGallery({ items }: { items: Media[] }) {
           </Reveal>
         ) : (
           <>
-            <ul className="mt-5 columns-2 gap-2.5 [&>li]:mb-2.5">
-              <AnimatePresence initial={false}>
-                {gal.visible.map((item, i) => (
-                  <m.li
-                    key={item.src}
-                    className="break-inside-avoid"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <GalleryTile item={item} n={i + 1} sizes="(min-width: 576px) 270px, 47vw" onOpen={() => gal.show(i)} className="rounded-[1.1rem]" />
-                  </m.li>
-                ))}
-              </AnimatePresence>
-            </ul>
+            <div className="mt-5 space-y-2.5">
+              {toRows(gal.visible, 2, 1.7).map((row) => (
+                <ul key={row.cells[0].item.src} className="flex gap-2.5">
+                  {row.spacer > 0 && <li aria-hidden="true" style={{ flex: `${row.spacer / 2} 1 0%` }} />}
+                  <AnimatePresence initial={false}>
+                    {row.cells.map(({ item, index, ratio }) => (
+                      <m.li
+                        key={item.src}
+                        style={{ flex: `${ratio} 1 0%` }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                      >
+                        <GalleryTile
+                          item={item}
+                          n={index + 1}
+                          sizes="(min-width: 576px) 360px, 62vw"
+                          onOpen={() => gal.show(index)}
+                          className="rounded-[1.1rem]"
+                        />
+                      </m.li>
+                    ))}
+                  </AnimatePresence>
+                  {row.spacer > 0 && <li aria-hidden="true" style={{ flex: `${row.spacer / 2} 1 0%` }} />}
+                </ul>
+              ))}
+            </div>
             {gal.canExpand && (
               <button type="button" onClick={gal.toggle} aria-expanded={gal.expanded} className="btn btn-ghost mt-2 w-full">
                 {gal.expanded ? g.less : `${g.more} (${gal.hiddenCount})`}

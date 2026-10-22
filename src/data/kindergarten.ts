@@ -121,6 +121,16 @@ export const groups: Group[] = Array.from({ length: club.groupsCount }, (_, i) =
   photo: null,
 }));
 
+/**
+ * How the two named photos sit in their shaped frames (CSS object-position) and their alt text.
+ * Tuned for the current main-page.jpeg (the building and its sign) and main-page2.jpeg
+ * (children with their dance awards — faces in the lower middle). Update if the files change.
+ */
+export const photos = {
+  hero: { alt: "«Балдаурен» балалар клубының ғимараты", focus: "38% 50%" },
+  about: { alt: "«Балдаурен» тәрбиеленушілері би байқауының марапатымен", focus: "50% 62%" },
+} as const;
+
 export const groupsCopy = {
   title: "Біздің топтар",
   eyebrow: "Топтар",

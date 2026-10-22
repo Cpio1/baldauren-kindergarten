@@ -4,7 +4,7 @@ import { Cloud, Dot, Ring, Sparkle, Star } from "@/components/shared/Decor";
 import { MediaView } from "@/components/shared/MediaView";
 import { Reveal } from "@/components/shared/Reveal";
 import { SceneArt } from "@/components/shared/SceneArt";
-import { club, heroFacts, links, ui } from "@/data/kindergarten";
+import { club, heroFacts, links, photos, ui } from "@/data/kindergarten";
 import type { Media } from "@/lib/media";
 
 const SIZES = "(min-width: 1280px) 420px, 34vw";
@@ -66,7 +66,7 @@ export function DesktopHero({ media }: { media: Media | null }) {
             />
             <div className="relative aspect-[4/5] max-h-[calc(100svh-12rem)] min-h-[20rem] overflow-hidden rounded-[44%_56%_48%_52%/40%_42%_58%_60%] bg-turquoise-soft shadow-card">
               {media ? (
-                <MediaView media={media} alt="«Балдаурен» балалар клубы" sizes={SIZES} hero />
+                <MediaView media={media} alt={photos.hero.alt} objectPosition={photos.hero.focus} sizes={SIZES} hero />
               ) : (
                 <SceneArt variant="hero" className="absolute inset-0" />
               )}
