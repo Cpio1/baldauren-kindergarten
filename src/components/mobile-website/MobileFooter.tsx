@@ -12,7 +12,7 @@ export function MobileFooter() {
           <Emblem className="h-12 w-12" />
           <span className="font-display text-[1.15rem] font-semibold">{club.name}</span>
         </a>
-        <p className="mt-1 text-sm text-cream/70">балалар клубы</p>
+        <p className="mt-1 text-sm text-cream/70">{club.kind}</p>
 
         <div className="mt-5 flex justify-center gap-2.5">
           <a href={links.call} className="inline-flex items-center gap-2 rounded-full bg-cream/10 px-4 py-2.5 text-sm font-bold">

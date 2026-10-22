@@ -34,7 +34,7 @@ export function MobileHeader() {
             <Emblem className="h-9 w-9 shrink-0" />
             <span className="min-w-0 leading-none">
               <span className="block font-display text-[0.98rem] font-semibold text-deep">{club.name}</span>
-              <span className="mt-0.5 block text-[0.68rem] font-bold text-ink-soft">балалар клубы</span>
+              <span className="mt-0.5 block text-[0.68rem] font-bold text-ink-soft">{club.kind}</span>
             </span>
           </a>
           <div className="flex items-center gap-2">

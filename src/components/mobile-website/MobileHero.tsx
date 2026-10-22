@@ -22,7 +22,7 @@ export function MobileHero({ media }: { media: Media | null }) {
         <h1 id="m-hero-title" className="m-h1 mt-3 font-semibold text-ink">
           <span className="text-deep">«{club.name}»</span>
           <br />
-          балалар клубы
+          {club.kind}
         </h1>
         <p className="mt-3 font-display text-[1rem] leading-snug font-medium text-ink">{club.slogan}</p>
         <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">{club.lead}</p>

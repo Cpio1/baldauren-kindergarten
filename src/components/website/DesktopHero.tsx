@@ -22,7 +22,7 @@ export function DesktopHero({ media }: { media: Media | null }) {
             <h1 id="d-hero-title" className="d-h1 mt-4 font-semibold text-ink">
               <span className="text-deep">«{club.name}»</span>
               <br />
-              балалар клубы
+              {club.kind}
             </h1>
             <p className="mt-4 max-w-[30rem] font-display text-[clamp(1.05rem,0.7rem+0.6vw,1.3rem)] leading-snug font-medium text-ink">
               {club.slogan}

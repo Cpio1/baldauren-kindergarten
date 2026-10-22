@@ -13,7 +13,7 @@ export function DesktopFooter() {
             <Emblem className="h-12 w-12" />
             <span>
               <span className="block font-display text-[1.2rem] font-semibold">{club.name}</span>
-              <span className="block text-sm font-semibold text-cream/70">балалар клубы</span>
+              <span className="block text-sm font-semibold text-cream/70">{club.kind}</span>
             </span>
           </a>
           <p className="mt-4 max-w-[18rem] text-sm leading-relaxed text-cream/75">{club.slogan}</p>

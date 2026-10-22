@@ -5,7 +5,7 @@ import path from "node:path";
 /**
  * Photos and videos are picked up from /public at build time:
  *  - main-page.*   — Hero (image or video)
- *  - main-page2.*  — «Біздің клуб туралы» (image or video)
+ *  - main-page2.*  — «Біздің балабақша туралы» (image or video)
  *  - everything else in public/images — gallery, sorted by file name
  * A video may have a poster next to it: `<name>-poster.jpg`.
  * Drop files in and redeploy — no code changes needed.

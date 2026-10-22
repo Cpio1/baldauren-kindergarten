@@ -24,7 +24,7 @@ export function DesktopHeader() {
           <Emblem className="h-10 w-10" />
           <span className="leading-none">
             <span className="block font-display text-[1.05rem] font-semibold text-deep">{club.name}</span>
-            <span className="mt-1 block text-[0.72rem] font-bold text-ink-soft">балалар клубы</span>
+            <span className="mt-1 block text-[0.72rem] font-bold text-ink-soft">{club.kind}</span>
           </span>
         </a>
 

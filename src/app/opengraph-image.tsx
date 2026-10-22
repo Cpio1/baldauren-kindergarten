@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { OgEmblem } from "@/components/shared/og-art";
 import { club } from "@/data/kindergarten";
 
-export const alt = "«Балдаурен» балалар клубы — Алматы, Қалқаман-2";
+export const alt = "«Балдаурен» балабақшасы — Алматы, Қалқаман-2";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -21,7 +21,7 @@ async function loadFont(family: string, weight: number, text: string) {
 
 export default async function OpengraphImage() {
   const title = `«${club.name}»`;
-  const subtitle = "балалар клубы";
+  const subtitle = club.kind;
   const facts = ["2–5 жас", "4 топ", "5 мезгіл тамақтану", "Қазақ тілінде"];
   const place = "Алматы · Қалқаман-2 · Кенесбаев көшесі, 1";
 
