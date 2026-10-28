@@ -37,7 +37,7 @@ export function DesktopHeader() {
                   <a
                     href={`#${item.id}`}
                     aria-current={isActive ? "location" : undefined}
-                    className={`relative rounded-full px-3.5 py-2 text-[0.92rem] font-bold transition-colors ${
+                    className={`relative rounded-full px-2.5 py-2 text-[0.86rem] font-bold whitespace-nowrap transition-colors ${
                       isActive ? "bg-turquoise-soft text-deep" : "text-ink-soft hover:text-deep"
                     }`}
                   >

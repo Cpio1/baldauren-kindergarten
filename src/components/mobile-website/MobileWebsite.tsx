@@ -3,6 +3,7 @@ import { MobileAbout } from "./MobileAbout";
 import { MobileActionBar } from "./MobileActionBar";
 import { MobileAdvantages } from "./MobileAdvantages";
 import { MobileContacts } from "./MobileContacts";
+import { MobileDocuments } from "./MobileDocuments";
 import { MobileFooter } from "./MobileFooter";
 import { MobileGallery } from "./MobileGallery";
 import { MobileGroups } from "./MobileGroups";
@@ -22,6 +23,7 @@ export function MobileWebsite({ media }: { media: SiteMedia }) {
         <MobileGroups />
         <MobileNutrition />
         <MobileGallery items={media.gallery} />
+        <MobileDocuments />
         <MobileContacts />
       </main>
       <MobileFooter />

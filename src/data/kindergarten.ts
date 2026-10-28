@@ -26,6 +26,8 @@ export const club = {
     greeting: "Сәлеметсіз бе! «Балдаурен» балабақшасы туралы білгім келеді.",
   },
   instagram: { url: "https://www.instagram.com/baldauren_sad/", handle: "@baldauren_sad" },
+  /** Official documents live only in this Google Drive folder; the site just links to it. */
+  documentsFolder: "https://drive.google.com/drive/folders/10OgMBK2bQdEbEtWDUjcjGpcUsbp0SLot",
 
   address: {
     full: "Алматы қаласы, Наурызбай ауданы, Қалқаман-2 шағынауданы, Кенесбаев көшесі, 1",
@@ -55,6 +57,7 @@ export const links = {
   call: `tel:${club.phone.tel}`,
   whatsapp: whatsappLink(),
   instagram: club.instagram.url,
+  documents: club.documentsFolder,
   twoGisCard: `https://2gis.kz/almaty/firm/${club.twoGis.firmId}`,
   twoGisRoute: `https://2gis.kz/almaty/directions/points/${encodeURIComponent(
     `|${club.twoGis.lng},${club.twoGis.lat};${club.twoGis.firmId}`,
@@ -66,6 +69,7 @@ export const nav = [
   { id: "groups", label: "Топтар" },
   { id: "nutrition", label: "Тамақтану" },
   { id: "gallery", label: "Галерея" },
+  { id: "documents", label: "Құжаттар" },
   { id: "contacts", label: "Байланыс" },
 ] as const;
 
@@ -170,6 +174,14 @@ export const galleryCopy = {
   next: "Келесі",
   photoAlt: (n: number) => `«Балдаурен» балабақшасы, ${n}-сурет`,
   videoLabel: (n: number) => `«Балдаурен» балабақшасы, ${n}-бейне`,
+} as const;
+
+export const documentsCopy = {
+  title: "Құжаттар",
+  eyebrow: "Ресми ақпарат",
+  lead: "Балабақшаның ресми құжаттары Google Drive-тағы бір папкада жинақталған. Оларды кез келген уақытта ашып, танысуға болады.",
+  open: "Құжаттарды қарау",
+  where: "Google Drive",
 } as const;
 
 export const contactsCopy = {

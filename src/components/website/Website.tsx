@@ -2,6 +2,7 @@ import type { SiteMedia } from "@/lib/media";
 import { DesktopAbout } from "./DesktopAbout";
 import { DesktopAdvantages } from "./DesktopAdvantages";
 import { DesktopContacts } from "./DesktopContacts";
+import { DesktopDocuments } from "./DesktopDocuments";
 import { DesktopFooter } from "./DesktopFooter";
 import { DesktopGallery } from "./DesktopGallery";
 import { DesktopGroups } from "./DesktopGroups";
@@ -21,6 +22,7 @@ export function Website({ media }: { media: SiteMedia }) {
         <DesktopGroups />
         <DesktopNutrition />
         <DesktopGallery items={media.gallery} />
+        <DesktopDocuments />
         <DesktopContacts />
       </main>
       <DesktopFooter />
